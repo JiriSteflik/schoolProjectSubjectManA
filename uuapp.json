@@ -1,0 +1,65 @@
+{
+  "product": "uu_subjectmanx_maing01",
+  "version": "0.1.0",
+  "license": "License Commercial",
+  "description": {
+    "en": "",
+    "cs": ""
+  },
+  "devkit": {
+    "development": {
+      "appBoxLocationUri": "----- VALUE REQUIRED -----",
+      "appDeploymentUri": null
+    }
+  },
+  "uu_subjectmanx_maing01-hi": {
+    "componentList": [
+      {
+        "code": "UuSubjectmanx.Routes.Subject",
+        "name": "Subject",
+        "tagList": [
+          "UuSubjectmanx",
+          "Routes",
+          "Subject"
+        ],
+        "docCode": "UuSubjectmanxRoutesSubject",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Routes.Subject />"
+      },
+      {
+        "code": "UuSubjectmanx.Routes.StudyProgramme",
+        "name": "StudyProgramme",
+        "tagList": [
+          "UuSubjectmanx",
+          "Routes",
+          "StudyProgramme"
+        ],
+        "docCode": "UuSubjectmanxRoutesStudyProgramme",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Routes.StudyProgramme />"
+      },
+      {
+        "code": "UuSubjectmanx.Routes.StudyMaterial",
+        "name": "StudyMaterial",
+        "tagList": [
+          "UuSubjectmanx",
+          "Routes",
+          "StudyMaterial"
+        ],
+        "docCode": "UuSubjectmanxRoutesStudyMaterial",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Routes.StudyMaterial />"
+      }
+    ]
+  },
+  "uu_subjectmanx_maing01-server": {}
+}
