@@ -3,7 +3,7 @@ const Lsi = {
     cs: "Aplikace uuSubjectmanx",
     en: "Application uuSubjectmanx",
   },
-
+  
   left: {
     home: {
       cs: "Vítejte",
@@ -26,7 +26,12 @@ const Lsi = {
       en: "Study materials",
     },
   },
-
+  subjectDetail: {
+    subjectName: {
+      cs: "Projektový management",
+      en: "Project Management for IT",
+    },
+  },
   about: {
     header: {
       cs: "O aplikaci uuSubjectmanx",

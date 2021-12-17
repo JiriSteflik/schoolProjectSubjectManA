@@ -32,6 +32,10 @@ let Calls = {
     let commandUri = Calls.getCommandUri("sys/uuAppWorkspace/get");
     return Calls.call("get", commandUri, {});
   },
+  listSubject(dtoIn) {
+    let commandUri = Calls.getCommandUri("subject/list");
+    return Calls.call("get", commandUri, dtoIn);
+  },
 
   async initAndGetWorkspace(dtoInData) {
     await Calls.initWorkspace(dtoInData);

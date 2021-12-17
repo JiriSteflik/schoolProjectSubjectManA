@@ -1,0 +1,15 @@
+{
+  "itemList": [
+    { "id": 1, "firstName": "Josef", "age": 15 },
+    {
+      "id": 2,
+      "firstName": "karel",
+      "age": 19
+    },
+    {
+      "id": 3,
+      "firstName": "Jonas",
+      "age": 23
+    }
+  ]
+}

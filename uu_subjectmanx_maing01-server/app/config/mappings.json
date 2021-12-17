@@ -15,6 +15,16 @@
         "realization": "index.html",
         "httpMethod": "GET",
         "type": "UVE"
+      },
+      "sayHello": {
+        "realization": "api/controllers/SubjectManxController.sayHello",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "subject/create": {
+        "realization": "api/controllers/SubjectController.create",
+        "httpMethod": "POST",
+        "type": "CMD"
       }
     }
   }

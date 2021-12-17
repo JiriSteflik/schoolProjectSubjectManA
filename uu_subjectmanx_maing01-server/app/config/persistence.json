@@ -6,6 +6,12 @@
       "schemaMap": {
         "subjectmanxMain": {
           "realization": "dao/SubjectmanxMainMongo"
+        },
+        "subjectManx": {
+          "realization": "dao/SubjectManxMongo"
+        },
+        "subject": {
+          "realization": "dao/SubjectMongo"
         }
       }
     }

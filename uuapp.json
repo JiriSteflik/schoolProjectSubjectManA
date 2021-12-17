@@ -58,6 +58,66 @@
         "imageUri": "",
         "uuEccReady": false,
         "template": "<UuSubjectmanx.Routes.StudyMaterial />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.SubjectInfo",
+        "name": "SubjectInfo",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "SubjectInfo"
+        ],
+        "docCode": "UuSubjectmanxBricksSubjectInfo",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.SubjectInfo />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.SubjectDescriptions",
+        "name": "SubjectDescriptions",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "SubjectDescriptions"
+        ],
+        "docCode": "UuSubjectmanxBricksSubjectDescriptions",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.SubjectDescriptions />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.StudyMaterial",
+        "name": "StudyMaterial",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "StudyMaterial"
+        ],
+        "docCode": "UuSubjectmanxBricksStudyMaterial",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.StudyMaterial />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.StudyTopic",
+        "name": "StudyTopic",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "StudyTopic"
+        ],
+        "docCode": "UuSubjectmanxBricksStudyTopic",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.StudyTopic />"
       }
     ]
   },
