@@ -36,10 +36,12 @@ export const Subject = createVisualComponent({
     //@@viewOn:render
     const className = Config.Css.css`
     margin: auto;
-    width: 60%;
+    width: 55%;
     `;
+    
     const attrs = UU5.Common.VisualComponent.getAttrs(props, className);
     const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
+    
 
     return currentNestingLevel ? (
       <div {...attrs}>

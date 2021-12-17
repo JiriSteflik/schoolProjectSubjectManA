@@ -118,6 +118,20 @@
         "imageUri": "",
         "uuEccReady": false,
         "template": "<UuSubjectmanx.Bricks.StudyTopic />"
+      },
+      {
+        "code": "UuSubjectmanx.AdditionStudyMaterial",
+        "name": "AdditionStudyMaterial",
+        "tagList": [
+          "UuSubjectmanx",
+          "AdditionStudyMaterial"
+        ],
+        "docCode": "UuSubjectmanxAdditionStudyMaterial",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.AdditionStudyMaterial />"
       }
     ]
   },

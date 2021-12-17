@@ -1,10 +1,8 @@
-//@@viewOn:imports
 import UU5 from "uu5g04";
 import { createVisualComponent } from "uu5g04-hooks";
 import Config from "./config/config";
 import StudyTopic from "./study-topic";
 import Lsi from "../routes/subject.lsi";
-import AdditionalStudyMaterial from "./additional-study-material";
 
 //@@viewOff:imports
 
@@ -15,7 +13,7 @@ const STATICS = {
   //@@viewOff:statics
 };
 
-export const StudyMaterial = createVisualComponent({
+export const AdditionalStudyMaterial = createVisualComponent({
   ...STATICS,
 
   //@@viewOn:propTypes
@@ -32,35 +30,29 @@ export const StudyMaterial = createVisualComponent({
 
     //@@viewOn:interface
     //@@viewOff:interface
-    
+
     //@@viewOn:render
     const className = Config.Css.css`
-    text-align:center;
-   
+    text-align:left;
+    box-shadow: 3px 1px 7px #5589e6;
+    padding: 2rem;
+    margin: 1rem;
     
-    margin: 2rem;
     float: center;
-    border: 4px solid 5589e6;
     border-radius: 25px;`;
-  
-    
+
     const attrs = UU5.Common.VisualComponent.getAttrs(props, className);
-    const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(
-      props,
-      STATICS
-    );
+    const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
 
     return currentNestingLevel ? (
-      <div {...attrs}>
-        <StudyTopic />
-        
-        
-        <AdditionalStudyMaterial/>
-        
-      </div>
+      
+        <UU5.Bricks.Container {...attrs}>
+          <UU5.Bricks.Lsi lsi={Lsi.subjectDescription.subjectDes} />
+        </UU5.Bricks.Container>
+      
     ) : null;
     //@@viewOff:render
   },
 });
 
-export default StudyMaterial;
+export default AdditionalStudyMaterial;
