@@ -132,6 +132,36 @@
         "imageUri": "",
         "uuEccReady": false,
         "template": "<UuSubjectmanx.AdditionStudyMaterial />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.SubjectCreate",
+        "name": "SubjectCreate",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "SubjectCreate"
+        ],
+        "docCode": "UuSubjectmanxBricksSubjectCreate",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.SubjectCreate />"
+      },
+      {
+        "code": "UuSubjectmanx.Routes.BookList",
+        "name": "BookList",
+        "tagList": [
+          "UuSubjectmanx",
+          "Routes",
+          "BookList"
+        ],
+        "docCode": "UuSubjectmanxRoutesBookList",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Routes.BookList />"
       }
     ]
   },

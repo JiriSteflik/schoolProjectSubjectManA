@@ -1,53 +1,36 @@
 "use strict";
 const Path = require("path");
 const { Validator } = require("uu_appg01_server").Validation;
-const { DaoFactory } = require("uu_appg01_server").ObjectStore;
+const { DaoFactory, ObjectStoreError } = require("uu_appg01_server").ObjectStore;
 const { ValidationHelper } = require("uu_appg01_server").AppServer;
-const Errors = require("../api/errors/subject-error.js");
+const Errors = require("../api/errors/programme-error.js");
 
 const WARNINGS = {
   createUnsupportedKeys: {
     code: `${Errors.Create.UC_CODE}unsupportedKeys`,
   },
-  updateUnsupportedKeys: {
-    code: `${Errors.Update.UC_CODE}unsupportedKeys`,
-  },
   getUnsupportedKeys: {
-    code: `${Errors.Get.UC_CODE}unsupportedKeys`,
+    code: `${Errors.Create.UC_CODE}unsupportedKeys`,
   },
-  removeUnsupportedKeys: {
-    code: `${Errors.Remove.UC_CODE}unsupportedKeys`,
+  updateUnsupportedKeys: {
+    code: `${Errors.Create.UC_CODE}unsupportedKeys`,
   },
   listUnsupportedKeys: {
-    code: `${Errors.List.UC_CODE}unsupportedKeys`,
+    code: `${Errors.Create.UC_CODE}unsupportedKeys`,
+  },
+  removeUnsupportedKeys: {
+    code: `${Errors.Create.UC_CODE}unsupportedKeys`,
   },
 };
-
 const EXECUTIVES_PROFILE = "Executives";
-
-class SubjectAbl {
+class ProgrammeAbl {
   constructor() {
     this.validator = Validator.load();
-    this.dao = DaoFactory.getDao("subject");
-  }
-
-  async list(awid, dtoIn) {
-    let validationResult = this.validator.validate("subjectListDtoInType", dtoIn);
-
-    // hds 1.2, 1.3 // A1, A2
-    let uuAppErrorMap = ValidationHelper.processValidationResult(
-      dtoIn,
-      validationResult,
-      WARNINGS.listUnsupportedKeys.code,
-      Errors.List.InvalidDtoIn
-    );
-    const listResult = await this.dao.list(awid, dtoIn.pageInfo);
-
-    return { ...listResult, uuAppErrorMap };
+    this.dao = DaoFactory.getDao("programme");
   }
 
   async remove(awid, dtoIn) {
-    let validationResult = this.validator.validate("subjectRemoveDtoInType", dtoIn);
+    let validationResult = this.validator.validate("programmeRemoveDtoInType", dtoIn);
 
     // hds 1.2, 1.3 // A1, A2
     let uuAppErrorMap = ValidationHelper.processValidationResult(
@@ -61,7 +44,7 @@ class SubjectAbl {
       await this.dao.remove(awid, dtoIn.id);
     } catch (e) {
       if (e instanceof ObjectStoreError) {
-        throw new Errors.Remove.SubjectDaoRemoveFailed({ uuAppErrorMap }, e);
+        throw new Errors.Remove.ProgrammeDaoRemoveFailed({ uuAppErrorMap }, e);
       }
       throw e;
     }
@@ -69,27 +52,23 @@ class SubjectAbl {
     return { uuAppErrorMap };
   }
 
-  async get(awid, dtoIn) {
-    let validationResult = this.validator.validate("subjectGetDtoInType", dtoIn);
+  async list(awid, dtoIn) {
+    let validationResult = this.validator.validate("programmeListDtoInType", dtoIn);
 
     // hds 1.2, 1.3 // A1, A2
     let uuAppErrorMap = ValidationHelper.processValidationResult(
       dtoIn,
       validationResult,
-      WARNINGS.getUnsupportedKeys.code,
-      Errors.Get.InvalidDtoIn
+      WARNINGS.listUnsupportedKeys.code,
+      Errors.List.InvalidDtoIn
     );
-    let subject = await this.dao.get(awid, dtoIn.id);
-    if (!subject) {
-      throw new Errors.Get.SubjectDoesNotExist({ uuAppErrorMap }, { id: dtoIn.id });
-    }
-    subject.uuAppErrorMap = uuAppErrorMap;
+    const listResult = await this.dao.list(awid, dtoIn.pageInfo);
 
-    return subject;
+    return { ...listResult, uuAppErrorMap };
   }
 
-  async update(awid, dtoIn, session) {
-    let validationResult = this.validator.validate("subjectUpdateDtoInType", dtoIn);
+  async update(awid, dtoIn) {
+    let validationResult = this.validator.validate("programmeUpdateDtoInType", dtoIn);
 
     // hds 1.2, 1.3 // A1, A2
     let uuAppErrorMap = ValidationHelper.processValidationResult(
@@ -106,7 +85,7 @@ class SubjectAbl {
     } catch (e) {
       if (e instanceof ObjectStoreError) {
         // A3
-        throw new Errors.Update.SubjectDaoUpdateFailed({ uuAppErrorMap }, e);
+        throw new Errors.Update.ProgrammeDaoUpdateFailed({ uuAppErrorMap }, e);
       }
       throw e;
     }
@@ -115,9 +94,28 @@ class SubjectAbl {
     return dtoOut;
   }
 
+  async get(awid, dtoIn) {
+    let validationResult = this.validator.validate("programmeGetDtoInType", dtoIn);
+
+    // hds 1.2, 1.3 // A1, A2
+    let uuAppErrorMap = ValidationHelper.processValidationResult(
+      dtoIn,
+      validationResult,
+      WARNINGS.getUnsupportedKeys.code,
+      Errors.Get.InvalidDtoIn
+    );
+    let programme = await this.dao.get(awid, dtoIn.id);
+    if (!programme) {
+      throw new Errors.Get.ProgrammeDoesNotExist({ uuAppErrorMap }, { id: dtoIn.id });
+    }
+    programme.uuAppErrorMap = uuAppErrorMap;
+
+    return programme;
+  }
+
   async create(awid, dtoIn, session, authorizationResult) {
     // hds 1, 1.1
-    let validationResult = this.validator.validate("subjectCreateDtoInType", dtoIn);
+    let validationResult = this.validator.validate("programmeCreateDtoInType", dtoIn);
 
     // hds 1.2, 1.3 // A1, A2
     let uuAppErrorMap = ValidationHelper.processValidationResult(
@@ -142,7 +140,7 @@ class SubjectAbl {
     } catch (e) {
       if (e instanceof ObjectStoreError) {
         // A3
-        throw new Errors.CreateSubject.SubjectDaoCreateFailed({ uuAppErrorMap }, e);
+        throw new Errors.CreateProgramme.ProgrammeDaoCreateFailed({ uuAppErrorMap }, e);
       }
       throw e;
     }
@@ -153,4 +151,4 @@ class SubjectAbl {
   }
 }
 
-module.exports = new SubjectAbl();
+module.exports = new ProgrammeAbl();

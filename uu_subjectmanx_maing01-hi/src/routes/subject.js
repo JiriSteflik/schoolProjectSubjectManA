@@ -56,6 +56,12 @@ export const Subject = createVisualComponent({
         </div>
 
         <SubjectDescriptions />
+        <UU5.Bricks.Header
+          colorSchema="blue"
+          content={<UU5.Bricks.Lsi lsi={Lsi.subjectDetail.subjectMat} />}
+          level="1"
+          className="uu5-common-center font-size-xxl"
+        />
         <StudyMaterial />
       </div>
     ) : null;

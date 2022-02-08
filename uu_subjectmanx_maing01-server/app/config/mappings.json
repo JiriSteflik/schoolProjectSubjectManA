@@ -25,6 +25,76 @@
         "realization": "api/controllers/SubjectController.create",
         "httpMethod": "POST",
         "type": "CMD"
+      },
+      "programme/create": {
+        "realization": "api/controllers/ProgrammeController.create",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "subject/update": {
+        "realization": "api/controllers/SubjectController.update",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "subject/get": {
+        "realization": "api/controllers/SubjectController.get",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "subject/remove": {
+        "realization": "api/controllers/SubjectController.remove",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "subject/list": {
+        "realization": "api/controllers/SubjectController.list",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "programme/get": {
+        "realization": "api/controllers/ProgrammeController.get",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "programme/update": {
+        "realization": "api/controllers/ProgrammeController.update",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "programme/list": {
+        "realization": "api/controllers/ProgrammeController.list",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "programme/remove": {
+        "realization": "api/controllers/ProgrammeController.remove",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "topic/create": {
+        "realization": "api/controllers/TopicController.create",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "topic/get": {
+        "realization": "api/controllers/TopicController.get",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "topic/update": {
+        "realization": "api/controllers/TopicController.update",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "topic/list": {
+        "realization": "api/controllers/TopicController.list",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "topic/remove": {
+        "realization": "api/controllers/TopicController.remove",
+        "httpMethod": "POST",
+        "type": "CMD"
       }
     }
   }

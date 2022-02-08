@@ -12,6 +12,7 @@ import Home from "../routes/home";
 import Subject from "../routes/subject";
 import StudyProgramme from "../routes/study-programme";
 import StudyMaterial from "../routes/study-material";
+import BookList from "../routes/book-list"
 //@@viewOff:imports
 
 const STATICS = {
@@ -32,6 +33,7 @@ const ROUTES = {
   subject: { component: <Subject /> },
   studyProgramme: { component: <StudyProgramme /> },
   studyMaterial: { component: <StudyMaterial /> },
+  bookList: { component: <BookList /> },
   "sys/uuAppWorkspace/initUve": { component: <InitAppWorkspace /> },
   controlPanel: { component: <ControlPanel /> },
 };

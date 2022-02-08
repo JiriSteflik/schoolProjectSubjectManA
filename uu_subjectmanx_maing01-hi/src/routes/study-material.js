@@ -1,7 +1,11 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
-import { createVisualComponent } from "uu5g04-hooks";
+import { createVisualComponent, useDataList } from "uu5g04-hooks";
 import Config from "./config/config";
+import SubjectCreate from "../bricks/subject-create";
+import Lsi from "../config/lsi";
+import Uu5Tiles from "uu5tilesg02";
+import Calls from "../calls";
 //@@viewOff:imports
 
 const STATICS = {
@@ -25,25 +29,42 @@ export const StudyMaterial = createVisualComponent({
   render(props) {
     //@@viewOn:private
     //@@viewOff:private
-
+    const bookListData = useDataList({
+      handlerMap: {
+        load: Calls.listProgramme,
+      },
+      initialDtoIn: {},
+    });
+    console.log(bookListData);
     //@@viewOn:interface
     //@@viewOff:interface
 
     //@@viewOn:render
     const className = Config.Css.css``;
     const attrs = UU5.Common.VisualComponent.getAttrs(props, className);
-    const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(
-      props,
-      STATICS
-    );
+    const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
+
+    /* function getColumns() {
+      const columnList = [
+        {
+          cell: (cellProps) => "test",
+          header: "Name",
+        },
+      ];
+      return columnList;
+    }*/
 
     return currentNestingLevel ? (
       <div {...attrs}>
-        <div>Visual Component {STATICS.displayName}</div>
-        {UU5.Utils.Content.getChildren(props.children, props, STATICS)}
+        <UU5.Bricks.Button colorSchema={"green"}>
+          <UU5.Bricks.Icon icon={"mdi-plus"}></UU5.Bricks.Icon>
+          <UU5.Bricks.Lsi lsi={Lsi.create}></UU5.Bricks.Lsi>
+        </UU5.Bricks.Button>
+
+        <SubjectCreate />
       </div>
     ) : null;
-    //@@viewOff:render
+    //@@viewOff:render<Uu5Tiles.List columns={getColumns()} data={["1"]} />
   },
 });
 

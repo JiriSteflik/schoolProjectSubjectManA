@@ -36,6 +36,10 @@ let Calls = {
     let commandUri = Calls.getCommandUri("subject/list");
     return Calls.call("get", commandUri, dtoIn);
   },
+  listProgramme(dtoIn) {
+    let commandUri = Calls.getCommandUri("programme/list")
+    return Calls.call("get", commandUri, dtoIn);
+  },
 
   async initAndGetWorkspace(dtoInData) {
     await Calls.initWorkspace(dtoInData);

@@ -1,10 +1,10 @@
 {
   "{asid}": {
-    "profileList": ["AsidAuthorities","AsidExecutives","AsidLicenseOwner","Public"],
+    "profileList": ["AsidAuthorities", "AsidExecutives", "AsidLicenseOwner", "Public"],
     "useCaseMap": {}
   },
   "*": {
-    "profileList": ["Authorities","Executives","AwidLicenseOwner","Public","Readers"],
+    "profileList": ["Authorities", "Executives", "AwidLicenseOwner", "Public", "Readers", "yes"],
     "useCaseMap": {
       "sys/uuAppWorkspace/init": {
         "sysStateList": ["created"],
@@ -15,7 +15,7 @@
       },
       "sys/uuAppWorkspace/initUve": {
         "sysStateList": ["created"],
-        "profileList": ["Public","AwidLicenseOwner"]
+        "profileList": ["Public", "AwidLicenseOwner"]
       },
       "sayHello": {
         "sysStateList": ["active"],
@@ -23,7 +23,63 @@
       },
       "subject/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers","Executives"]
+        "profileList": ["Authorities", "Readers", "Executives"]
+      },
+      "programme/create": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities", "Readers", "Executives"]
+      },
+      "subject/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "subject/get": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "subject/remove": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "subject/list": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+      },
+      "programme/get": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "programme/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "programme/list": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "programme/remove": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/create": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities", "Executives"]
+      },
+      "topic/get": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/update": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/list": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
+      },
+      "topic/remove": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
       }
     }
   }

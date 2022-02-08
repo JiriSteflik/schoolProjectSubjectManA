@@ -3,7 +3,10 @@ const Lsi = {
     cs: "Aplikace uuSubjectmanx",
     en: "Application uuSubjectmanx",
   },
-  
+  create: {
+    cs: "Vytvor",
+    en: "Add",
+  },
   left: {
     home: {
       cs: "Vítejte",
@@ -25,11 +28,19 @@ const Lsi = {
       cs: "Studijní materiály",
       en: "Study materials",
     },
+    bookList: {
+      cs: "Seznam knih  ",
+      en: "Book List",
+    },
   },
   subjectDetail: {
     subjectName: {
       cs: "Projektový management",
       en: "Project Management for IT",
+    },
+    subjectMat: {
+      cs: "Studijní materiál",
+      en: "Study materials",
     },
   },
   about: {

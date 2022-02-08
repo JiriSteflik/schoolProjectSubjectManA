@@ -12,6 +12,12 @@
         },
         "subject": {
           "realization": "dao/SubjectMongo"
+        },
+        "programme": {
+          "realization": "dao/ProgrammeMongo"
+        },
+        "topic": {
+          "realization": "dao/TopicMongo"
         }
       }
     }
