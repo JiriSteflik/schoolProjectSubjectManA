@@ -23,23 +23,23 @@
       },
       "subject/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "programme/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "subject/update": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "subject/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "subject/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "subject/list": {
         "sysStateList": ["active"],
@@ -47,39 +47,39 @@
       },
       "programme/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "programme/update": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "programme/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "programme/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "topic/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Executives"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "topic/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "topic/update": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "topic/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       },
       "topic/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities"]
+        "profileList": ["Authorities", "Readers", "Executives", "Public"]
       }
     }
   }

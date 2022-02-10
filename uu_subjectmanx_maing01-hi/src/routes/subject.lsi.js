@@ -1,4 +1,13 @@
 const Lsi = {
+  name: { cs: "Název předmětu", en: "Name of Subject" },
+  teacher: { cs: "Vyučující", eng: "Teacher" },
+  credit: { cs: "Kredity", eng: "Credit" },
+  create: { cs: "Přidej předmět", en: "Add Subject" },
+  createBook: { cs: "Přidat předmět", en: "Add Subject" },
+  updateBook: { cs: "Upravit předmět", en: "Update Subject" },
+  unsuccessful: { cs: "Nepodařilo se upravit předmět", en: "Failed to updated subject" },
+  requirement: { cs: "Požadavk", en: "Requirement" },
+  description: { cs: "Popis předmětu", en: "Description" },
   subjectInformation: {
     credits: {
       cs: "Kredity",

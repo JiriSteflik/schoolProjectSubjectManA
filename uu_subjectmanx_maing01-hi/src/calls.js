@@ -32,12 +32,34 @@ let Calls = {
     let commandUri = Calls.getCommandUri("sys/uuAppWorkspace/get");
     return Calls.call("get", commandUri, {});
   },
+
+  listTopic(dtoIn) {
+    let commandUri = Calls.getCommandUri("topic/list");
+    return Calls.call("get", commandUri, dtoIn);
+  },
   listSubject(dtoIn) {
     let commandUri = Calls.getCommandUri("subject/list");
     return Calls.call("get", commandUri, dtoIn);
   },
+  getSubject(dtoIn) {
+    let commandUri = Calls.getCommandUri("subject/get");
+    return Calls.call("get", commandUri, dtoIn);
+  },
+  createSubject(dtoIn) {
+    let commandUri = Calls.getCommandUri("subject/create");
+    return Calls.call("post", commandUri, dtoIn);
+  },
+  updateSubject(dtoIn) {
+    let commandUri = Calls.getCommandUri("subject/update");
+    return Calls.call("post", commandUri, dtoIn);
+  },
+  deleteSubject(dtoIn) {
+    let commandUri = Calls.getCommandUri("subject/remove");
+    return Calls.call("post", commandUri, dtoIn);
+  },
+
   listProgramme(dtoIn) {
-    let commandUri = Calls.getCommandUri("programme/list")
+    let commandUri = Calls.getCommandUri("programme/list");
     return Calls.call("get", commandUri, dtoIn);
   },
 

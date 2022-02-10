@@ -115,7 +115,7 @@ class SubjectAbl {
     return dtoOut;
   }
 
-  async create(awid, dtoIn, session, authorizationResult) {
+  async create(awid, dtoIn, session) {
     // hds 1, 1.1
     let validationResult = this.validator.validate("subjectCreateDtoInType", dtoIn);
 
@@ -128,11 +128,11 @@ class SubjectAbl {
     );
 
     // hds 2
-    dtoIn.visibility = authorizationResult.getAuthorizedProfiles().includes(EXECUTIVES_PROFILE);
+    
 
     // hds 3
-    dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
-    dtoIn.uuIdentityName = session.getIdentity().getName();
+    //dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
+    //dtoIn.uuIdentityName = session.getIdentity().getName();
 
     // hds 4
     dtoIn.awid = awid;
