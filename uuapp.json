@@ -1,15 +1,15 @@
 {
-  "product": "uu_subjectmanx_maing01",
+  "product": "uun_bpmi21wpt05_maing01",
   "version": "0.1.0",
   "license": "License Commercial",
   "description": {
-    "en": "",
-    "cs": ""
+    "en": "SubjectMan",
+    "cs": "SubjectMan"
   },
   "devkit": {
     "development": {
-      "appBoxLocationUri": "----- VALUE REQUIRED -----",
-      "appDeploymentUri": null
+      "appBoxLocationUri": "ues:UCL-BT:OPR.RSP/APPBOXES",
+      "appDeploymentUri": "ues:UCL-BT:UUN_STUDENTS03_AWE"
     }
   },
   "uu_subjectmanx_maing01-hi": {
