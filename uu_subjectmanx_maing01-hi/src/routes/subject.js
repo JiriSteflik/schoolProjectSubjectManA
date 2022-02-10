@@ -3,7 +3,7 @@ import UU5 from "uu5g04";
 import { createVisualComponent, useState, useDataList } from "uu5g04-hooks";
 import Uu5Tiles from "uu5tilesg02";
 import Config from "./config/config";
-import BookUpdateForm from "./subject-update-form";
+import SubjectUpdateForm from "./subject-update-form";
 import Lsi from "./subject.lsi";
 import Calls from "../calls";
 //@@viewOff:imports
@@ -109,7 +109,7 @@ export const SubjectList = createVisualComponent({
     return currentNestingLevel ? (
       <div {...attrs}>
         {selectedSubject && (
-          <BookUpdateForm
+          <SubjectUpdateForm
             selectedSubject={selectedSubject.data}
             setSelectedSubject={setSelectedSubject}
             handleCreateSubject={handleCreateSubject}

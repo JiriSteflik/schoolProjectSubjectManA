@@ -126,7 +126,6 @@ class ProgrammeAbl {
     );
 
     // hds 2
-    dtoIn.visibility = authorizationResult.getAuthorizedProfiles().includes(EXECUTIVES_PROFILE);
 
     // hds 3
     dtoIn.uuIdentity = session.getIdentity().getUuIdentity();

@@ -162,6 +162,36 @@
         "imageUri": "",
         "uuEccReady": false,
         "template": "<UuSubjectmanx.Routes.BookList />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.StudyProgrameAdd",
+        "name": "StudyProgrameAdd",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "StudyProgrameAdd"
+        ],
+        "docCode": "UuSubjectmanxBricksStudyProgrameAdd",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.StudyProgrameAdd />"
+      },
+      {
+        "code": "UuSubjectmanx.Routes.ProgrammeDetail",
+        "name": "ProgrammeDetail",
+        "tagList": [
+          "UuSubjectmanx",
+          "Routes",
+          "ProgrammeDetail"
+        ],
+        "docCode": "UuSubjectmanxRoutesProgrammeDetail",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Routes.ProgrammeDetail />"
       }
     ]
   },
