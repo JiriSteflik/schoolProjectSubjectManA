@@ -61,7 +61,7 @@ export const ProgrammectUpdateForm = createVisualComponent({
     return currentNestingLevel ? (
       <div {...attrs}>
         <UU5.Bricks.Modal
-          header={<UU5.Bricks.Lsi lsi={props.selectedProgramme?.id ? Lsi.updateBook : Lsi.createBook} />}
+          header={<UU5.Bricks.Lsi lsi={props.selectedProgramme?.id ? Lsi.updateProgramme : Lsi.createProgramme} />}
           shown={props.selectedProgramme}
           onClose={() => props.setSelectedProgramme(null)}
         >
@@ -80,19 +80,50 @@ export const ProgrammectUpdateForm = createVisualComponent({
             />
             <UU5.Forms.Text
               name={"garant"}
-              label={<UU5.Bricks.Lsi lsi={Lsi.teacher} />}
+              label={<UU5.Bricks.Lsi lsi={Lsi.garant} />}
               value={props.selectedProgramme?.garant || ""}
               controlled={true}
               required
             />
             <UU5.Forms.Text
               name={"description"}
-              label={<UU5.Bricks.Lsi lsi={Lsi.credit} />}
+              label={<UU5.Bricks.Lsi lsi={Lsi.description} />}
               value={props.selectedProgramme?.description || ""}
               controlled={true}
               required
             />
-           
+            <UU5.Forms.Select
+              name={"degree"}
+              label={<UU5.Bricks.Lsi lsi={Lsi.degree} />}
+              value={props.selectedProgramme?.degree || ""}
+              controlled={true}
+              required
+            >
+              <UU5.Forms.Select.Option value="bachelor" content={<UU5.Bricks.Lsi lsi={Lsi.degree.bachelor} />} />
+              <UU5.Forms.Select.Option value="magister" content={<UU5.Bricks.Lsi lsi={Lsi.degree.magister} />} />
+            </UU5.Forms.Select>
+
+            <UU5.Forms.Select
+              name={"forms"}
+              label={<UU5.Bricks.Lsi lsi={Lsi.forms} />}
+              value={props.selectedProgramme?.forms || ""}
+              controlled={true}
+              required
+            >
+              <UU5.Forms.Select.Option value="full-time" content={<UU5.Bricks.Lsi lsi={Lsi.forms.fullTime} />} />
+              <UU5.Forms.Select.Option value="part-time" content={<UU5.Bricks.Lsi lsi={Lsi.forms.partTime} />} />
+            </UU5.Forms.Select>
+
+            <UU5.Forms.Select
+              name={"language"}
+              label={<UU5.Bricks.Lsi lsi={Lsi.language} />}
+              value={props.selectedProgramme?.language || ""}
+              controlled={true}
+              required
+            >
+              <UU5.Forms.Select.Option value="CZ" content={<UU5.Bricks.Lsi lsi={Lsi.language.czech} />} />
+              <UU5.Forms.Select.Option value="EN" content={<UU5.Bricks.Lsi lsi={Lsi.language.english} />} />
+            </UU5.Forms.Select>
 
             <UU5.Bricks.Line size={"s"} />
             <UU5.Forms.Controls />

@@ -4,7 +4,7 @@
     "useCaseMap": {}
   },
   "*": {
-    "profileList": ["Authorities", "Executives", "AwidLicenseOwner", "Public", "Readers", "yes"],
+    "profileList": ["Authorities", "Executives", "AwidLicenseOwner", "Public", "Readers", "Students", "teachers"],
     "useCaseMap": {
       "sys/uuAppWorkspace/init": {
         "sysStateList": ["created"],
@@ -17,69 +17,66 @@
         "sysStateList": ["created"],
         "profileList": ["Public", "AwidLicenseOwner"]
       },
-      "sayHello": {
-        "sysStateList": ["active"],
-        "profileList": ["Public"]
-      },
+
       "subject/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Executives", "StudyDepartment"]
       },
       "programme/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Executives", "StudyDepartment"]
       },
       "subject/update": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Executives", "StudyDepartment"]
       },
       "subject/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Readers", "StudyDepartment", "Executives", "Public", "teachers", "Students"]
       },
       "subject/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "subject/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Readers", "StudyDepartment", "Executives", "Public", "teachers", "Students"]
       },
       "programme/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Readers", "StudyDepartment", "Executives", "Public", "teachers", "Students"]
       },
       "programme/update": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Executives", "StudyDepartment"]
       },
       "programme/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Readers", "StudyDepartment", "Executives", "Public", "teachers", "Students"]
       },
       "programme/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Executives"]
       },
       "topic/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Executives", "StudyDepartment"]
       },
       "topic/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Readers", "StudyDepartment", "Executives", "teachers", "Students"]
       },
       "topic/update": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Executives", "StudyDepartment"]
       },
       "topic/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Readers", "StudyDepartment", "Executives", "Public", "teachers", "Students"]
       },
       "topic/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities", "Readers", "Executives", "Public"]
+        "profileList": ["Authorities", "Executives"]
       }
     }
   }

@@ -7,12 +7,12 @@ import Config from "./config/config";
 
 const STATICS = {
   //@@viewOn:statics
-  displayName: Config.TAG + "ProgrammeDetail",
+  displayName: Config.TAG + "TopicDetail",
   nestingLevel: "bigBoxCollection",
   //@@viewOff:statics
 };
 
-export const ProgrammeDetail = createVisualComponent({
+export const TopicDetail = createVisualComponent({
   ...STATICS,
 
   //@@viewOn:propTypes
@@ -24,16 +24,15 @@ export const ProgrammeDetail = createVisualComponent({
   //@@viewOff:defaultProps
 
   render(props) {
-    const programmeData = useDataObject({
+    //@@viewOn:private
+    const topicData = useDataObject({
       handlerMap: {
-        load: Calls.getProgramme,
+        load: Calls.getTopic,
       },
       initialDtoIn: {
         id: props.params.id,
       },
     });
-
-    
     //@@viewOff:private
 
     //@@viewOn:interface
@@ -45,21 +44,17 @@ export const ProgrammeDetail = createVisualComponent({
     const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
     function getResult() {
       let result;
-      if (programmeData.state.includes("pending")) {
+      if (topicData.state.includes("pending")) {
         result = <UU5.Bricks.Loading />;
-      } else if (programmeData.state.includes("error")) {
-        result = <UU5.Common.Error errorData={programmeData.errorData} />;
+      } else if (topicData.state.includes("error")) {
+        result = <UU5.Common.Error errorData={topicData.errorData} />;
       } else {
         result = (
           <div>
             <UU5.Bricks.Container>
               <UU5.Bricks.Card colorSchema="blue">
-                <b>{programmeData.data.name}</b>
-                <div>{programmeData.data.garant}</div>
-                <div>{programmeData.data.description}</div>
-                <div>{programmeData.data.degree}</div>
-                <div>{programmeData.data.forms}</div>
-                <div>{programmeData.data.language}</div>
+                <b>{topicData.data.name}</b>
+                <div>{topicData.data.description}</div>
               </UU5.Bricks.Card>
             </UU5.Bricks.Container>
           </div>
@@ -67,10 +62,8 @@ export const ProgrammeDetail = createVisualComponent({
       }
       return result;
     }
-
     return currentNestingLevel ? <div {...attrs}>{getResult()}</div> : null;
     //@@viewOff:render
   },
 });
-
-export default ProgrammeDetail;
+export default TopicDetail;

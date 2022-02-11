@@ -192,6 +192,51 @@
         "imageUri": "",
         "uuEccReady": false,
         "template": "<UuSubjectmanx.Routes.ProgrammeDetail />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.TopicAdd",
+        "name": "TopicAdd",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "TopicAdd"
+        ],
+        "docCode": "UuSubjectmanxBricksTopicAdd",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.TopicAdd />"
+      },
+      {
+        "code": "UuSubjectmanx.Routes.Topic",
+        "name": "Topic",
+        "tagList": [
+          "UuSubjectmanx",
+          "Routes",
+          "Topic"
+        ],
+        "docCode": "UuSubjectmanxRoutesTopic",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Routes.Topic />"
+      },
+      {
+        "code": "UuSubjectmanx.Routes.TopicDetail",
+        "name": "TopicDetail",
+        "tagList": [
+          "UuSubjectmanx",
+          "Routes",
+          "TopicDetail"
+        ],
+        "docCode": "UuSubjectmanxRoutesTopicDetail",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Routes.TopicDetail />"
       }
     ]
   },

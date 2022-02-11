@@ -2,30 +2,22 @@
 const programmeCreateDtoInType = shape({
   name: uu5String(255).isRequired(),
   garant: uu5String(255),
-  description: uu5String(255),
+  description: uu5String(2550),
+  degree: oneOf(["bachelor", "magister"]),
   forms: oneOf(["full-time", "part-time"]),
   language: oneOf(["CZ", "EN"]),
-  /*subjects: array(
-    shape({
-      ref: string(),
-      id: string(),
-    })
-  ),*/
+  
 });
 
 const programmeUpdateDtoInType = shape({
   id: id(),
   name: uu5String(255).isRequired(),
   garant: uu5String(255),
-  description: uu5String(255),
+  description: uu5String(2550),
+  degree: oneOf(["bachelor", "magister"]),
   forms: oneOf(["full-time", "part-time"]),
   language: oneOf(["CZ", "EN"]),
-  /*subjects: array(
-    shape({
-      ref: string(),
-      id: string(),
-    })
-  ),*/
+  
 });
 
 const programmeGetDtoInType = shape({

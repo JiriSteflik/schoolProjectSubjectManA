@@ -4,7 +4,7 @@ import { createVisualComponent, useState, useDataList } from "uu5g04-hooks";
 import Uu5Tiles from "uu5tilesg02";
 import Config from "./config/config";
 import Study from "../bricks/study";
-import Lsi from "./subject.lsi";
+import Lsi from "./programme-lsi";
 import Calls from "../calls";
 //@@viewOff:imports
 
@@ -74,12 +74,12 @@ export const ProgrammeList = createVisualComponent({
         },
 
         {
-          header: <UU5.Bricks.Lsi lsi={Lsi.teacher} />,
+          header: <UU5.Bricks.Lsi lsi={Lsi.garant} />,
           cell: (cellProps) => cellProps.data.data.garant,
         },
         {
-          header: <UU5.Bricks.Lsi lsi={Lsi.credit} />,
-          cell: (cellProps) => cellProps.data.data.description,
+          header: <UU5.Bricks.Lsi lsi={Lsi.language} />,
+          cell: (cellProps) => cellProps.data.data.language,
         },
         {
           cell: (cellProps) => {

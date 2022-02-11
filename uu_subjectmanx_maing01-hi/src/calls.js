@@ -33,10 +33,6 @@ let Calls = {
     return Calls.call("get", commandUri, {});
   },
 
-  listTopic(dtoIn) {
-    let commandUri = Calls.getCommandUri("topic/list");
-    return Calls.call("get", commandUri, dtoIn);
-  },
   getProgramme(dtoIn) {
     let commandUri = Calls.getCommandUri("programme/get");
     return Calls.call("get", commandUri, dtoIn);
@@ -77,8 +73,26 @@ let Calls = {
     let commandUri = Calls.getCommandUri("subject/remove");
     return Calls.call("post", commandUri, dtoIn);
   },
-
-
+  listTopic(dtoIn) {
+    let commandUri = Calls.getCommandUri("topic/list");
+    return Calls.call("get", commandUri, dtoIn);
+  },
+  deleteTopic(dtoIn) {
+    let commandUri = Calls.getCommandUri("topic/delete");
+    return Calls.call("post", commandUri, dtoIn);
+  },
+  createTopic(dtoIn) {
+    let commandUri = Calls.getCommandUri("topic/create");
+    return Calls.call("post", commandUri, dtoIn);
+  },
+  getTopic(dtoIn) {
+    let commandUri = Calls.getCommandUri("topic/get");
+    return Calls.call("get", commandUri, dtoIn);
+  },
+  updateTopic(dtoIn) {
+    let commandUri = Calls.getCommandUri("topic/update");
+    return Calls.call("get", commandUri, dtoIn);
+  },
 
   async initAndGetWorkspace(dtoInData) {
     await Calls.initWorkspace(dtoInData);
