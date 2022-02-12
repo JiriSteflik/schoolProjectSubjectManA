@@ -1,6 +1,7 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
 import { createVisualComponent, useDataObject } from "uu5g04-hooks";
+import Lsi from "./subject.lsi";
 import Calls from "../calls";
 import Config from "./config/config";
 //@@viewOff:imports
@@ -30,7 +31,7 @@ export const TopicDetail = createVisualComponent({
         load: Calls.getTopic,
       },
       initialDtoIn: {
-        id: props.params.id,
+        id: props.topicId || props.params.id,
       },
     });
     //@@viewOff:private
@@ -51,6 +52,11 @@ export const TopicDetail = createVisualComponent({
       } else {
         result = (
           <div>
+            <UU5.Bricks.Link
+              onClick={() => UU5.Environment.getRouter().setRoute("topicDetail", { id: props.topicId })}
+            >
+              {topicData.data.name}
+            </UU5.Bricks.Link>
             <UU5.Bricks.Container>
               <UU5.Bricks.Card colorSchema="blue">
                 <b>{topicData.data.name}</b>

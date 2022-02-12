@@ -63,6 +63,20 @@ export const SubjectDetail = createVisualComponent({
                 <div>{subjectData.data.requirement}</div>
                 <div>{subjectData.data.description}</div>
               </UU5.Bricks.Card>
+              <UU5.Bricks.Card colorSchema="blue">
+                <div>{subjectData.data.description}</div>
+              </UU5.Bricks.Card>
+              <UU5.Bricks.Panel
+                header={subjectData.data.topicList}
+                colorSchema="blue"
+                iconExpanded="mdi-chevron-up"
+                iconCollapsed="mdi-chevron-down"
+                content={
+                  <UU5.Bricks.Block background colorSchema="blue">
+                    {subjectData.data.topicList} 
+                  </UU5.Bricks.Block>
+                }
+              />
             </UU5.Bricks.Container>
           </div>
         );

@@ -1,7 +1,8 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
-import { createVisualComponent, } from "uu5g04-hooks";
+import { createVisualComponent, useDataList } from "uu5g04-hooks";
 import Config from "./config/config";
+import Calls from "../calls";
 import Lsi from "./topic.lsi";
 //@@viewOff:imports
 
@@ -31,6 +32,22 @@ export const TopicAdd = createVisualComponent({
   //@@viewOff:defaultProps
 
   render(props) {
+    const topicData = useDataList({
+      handlerMap: {
+        load: Calls.listTopic,
+      },
+      initialDtoIn: {},
+    });
+
+    const topicAvailableTags = [];
+    if (topicData.data) {
+      topicData.data.forEach((topic) => {
+        topicAvailableTags.push({
+          value: topic.data.id,
+          content: topic.data.name,
+        });
+      });
+    }
     //@@viewOn:private
     async function handleOnSave(opt) {
       opt.component.setPending();
@@ -71,6 +88,7 @@ export const TopicAdd = createVisualComponent({
             valueColWidth={"xs-12 s-12 m-8 l-7 xl-7"}
             onSave={handleOnSave}
             onCancel={() => props.setSelectedTopic(null)}
+            controlled={true}
           >
             <UU5.Forms.Text
               name={"name"}
@@ -84,9 +102,8 @@ export const TopicAdd = createVisualComponent({
               label={<UU5.Bricks.Lsi lsi={Lsi.description} />}
               value={props.selectedTopic?.description || ""}
               controlled={true}
-              required
+              
             />
-           
 
             <UU5.Bricks.Line size={"s"} />
             <UU5.Forms.Controls />

@@ -2,6 +2,7 @@
 import UU5 from "uu5g04";
 import { createVisualComponent } from "uu5g04-hooks";
 import Config from "./config/config";
+import withDataList from "./with-data-list";
 import Lsi from "./subject-create-lsi";
 //@@viewOff:imports
 

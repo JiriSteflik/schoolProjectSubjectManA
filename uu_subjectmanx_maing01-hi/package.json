@@ -12,7 +12,9 @@
     "uu_contentkitg01": "^2.0.0",
     "uu_plus4u5g01": "^4.23.0",
     "uu_territoryg01": "^2.0.0",
-    "uu5tilesg02": "^1.0.0"
+    "uu5tilesg02": "^1.0.0",
+    "uu5g05": "^1.0.0",
+    "uu5g05-elements": "^1.0.0"
   },
   "uuBuildSettings": {
     "externals": {}

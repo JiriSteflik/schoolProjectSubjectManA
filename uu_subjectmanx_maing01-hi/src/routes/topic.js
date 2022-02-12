@@ -27,9 +27,7 @@ export const Topic = createVisualComponent({
   //@@viewOff:defaultProps
 
   render(props) {
-    //@@viewOn:private
-    //@@viewOff:private
-    // const [formOpened, setFormOpened] = useState(false);
+    
     const [selectedTopic, setSelectedTopic] = useState(null);
     const [topicToDelete, setTopicToDelete] = useState(null);
 
@@ -45,16 +43,17 @@ export const Topic = createVisualComponent({
       initialDtoIn: {},
     });
     //@@viewOn:interface
-    function handleCreateTopic(newBookData) {
-      return topicListData.handlerMap.createItem(newBookData);
+    function handleCreateTopic(newTopicData) {
+      return topicListData.handlerMap.createItem(newTopicData);
     }
 
-    function handleUpdateTopic(updatedBookData) {
-      return selectedTopic.handlerMap.update(updatedBookData);
+    function handleUpdateTopic(updatedTopicData) {
+      return selectedTopic.handlerMap.update(updatedTopicData);
     }
 
-    function handleBookTopic() {
+    function handleTopicDelete() {
       return topicToDelete.handlerMap.delete({ id: topicToDelete.data.id });
+      setTopicToDelete(null);
     }
 
     //@@viewOff:interface
@@ -78,6 +77,9 @@ export const Topic = createVisualComponent({
 
         {
           cell: (cellProps) => {
+            if (cellProps.data.state.includes("pending")) {
+              return <UU5.Bricks.Loading />;
+            } else {
             return (
               <>
                 <UU5.Bricks.Button
@@ -96,37 +98,40 @@ export const Topic = createVisualComponent({
                 </UU5.Bricks.Button>
               </>
             );
-          },
+          }
+        },
         },
       ];
     }
     return currentNestingLevel ? (
       <div {...attrs}>
         {selectedTopic && (
-          <TopicAdd
-            selectedTopic={selectedTopic.data}
-            setSelectedTopic={setSelectedTopic}
-            handleCreateTopic={handleCreateTopic}
-            handleUpdateTopic={handleUpdateTopic}
-          />
+          
+            <TopicAdd
+              selectedTopic={selectedTopic.data}
+              setSelectedTopic={setSelectedTopic}
+              handleCreateTopic={handleCreateTopic}
+              handleUpdateTopic={handleUpdateTopic}
+            />
+          
         )}
         {topicToDelete && (
-          <UU5.Bricks.Modal header={"Confirm Deleting Subject"} shown={true} onClose={() => setTopicToDelete(null)}>
+          <UU5.Bricks.Modal header={"Confirm Deleting Topic"} shown={true} onClose={() => setTopicToDelete(null)}>
             <div className={"center uu5-common-padding-s"}>
               <UU5.Bricks.Button onClick={() => setTopicToDelete(null)}>Refuse</UU5.Bricks.Button>{" "}
-              <UU5.Bricks.Button colorSchema={"red"} onClick={handleBookTopic}>
+              <UU5.Bricks.Button colorSchema={"red"} onClick={handleTopicDelete}>
                 Confirm
               </UU5.Bricks.Button>
             </div>
           </UU5.Bricks.Modal>
         )}
-        <UU5.Bricks.Container>
+        
           <UU5.Bricks.Button colorSchema={"green"} onClick={() => setSelectedTopic({ data: {} })}>
             <UU5.Bricks.Icon icon={"mdi-plus"} />
             <UU5.Bricks.Lsi lsi={Lsi.create} />
           </UU5.Bricks.Button>
           <Uu5Tiles.List columns={getColumns()} data={topicListData.data || []} rowAlignment="center" rowHeight={150} />
-        </UU5.Bricks.Container>
+        
       </div>
     ) : null;
     //@@viewOff:render

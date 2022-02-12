@@ -79,7 +79,7 @@
       },
       "topic/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives"]
+        "profileList": ["Authorities","Executives","Public"]
       },
       "material/create": {
         "sysStateList": ["active"],

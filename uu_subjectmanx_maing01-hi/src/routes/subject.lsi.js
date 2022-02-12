@@ -8,6 +8,9 @@ const Lsi = {
   unsuccessful: { cs: "Nepodařilo se upravit předmět", en: "Failed to updated subject" },
   requirement: { cs: "Požadavk", en: "Requirement" },
   description: { cs: "Popis předmětu", en: "Description" },
+  topicList: {cs: "Topic předmětů", en: "Topics of subject"},
+  topic: {cs:"topic", en:"topic"},
+  updateSubject: {cs:"Uprav předmět", en: "Edit subject"},
   subjectInformation: {
     credits: {
       cs: "Kredity",
