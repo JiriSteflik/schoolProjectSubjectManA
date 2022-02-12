@@ -10,16 +10,16 @@ const WARNINGS = {
     code: `${Errors.Create.UC_CODE}unsupportedKeys`,
   },
   getUnsupportedKeys: {
-    code: `${Errors.Create.UC_CODE}unsupportedKeys`,
+    code: `${Errors.Get.UC_CODE}unsupportedKeys`,
   },
   updateUnsupportedKeys: {
-    code: `${Errors.Create.UC_CODE}unsupportedKeys`,
+    code: `${Errors.Update.UC_CODE}unsupportedKeys`,
   },
   listUnsupportedKeys: {
-    code: `${Errors.Create.UC_CODE}unsupportedKeys`,
+    code: `${Errors.List.UC_CODE}unsupportedKeys`,
   },
   removeUnsupportedKeys: {
-    code: `${Errors.Create.UC_CODE}unsupportedKeys`,
+    code: `${Errors.Remove.UC_CODE}unsupportedKeys`,
   },
 };
 class TopicAbl {
@@ -126,9 +126,9 @@ class TopicAbl {
 
     dtoIn.awid = awid;
 
-    let topic;
+    let dtoOut;
     try {
-      topic = await this.dao.create(dtoIn);
+      dtoOut = await this.dao.create(dtoIn);
     } catch (e) {
       if (e instanceof ObjectStoreError) {
         throw new Errors.Create.TopicDaoCreateFailed({ uuAppErrorMap }, e);
@@ -136,8 +136,8 @@ class TopicAbl {
       throw e;
     }
 
-    topic.uuAppErrorMap = uuAppErrorMap;
-    return topic;
+    dtoOut.uuAppErrorMap = uuAppErrorMap;
+    return dtoOut;
   }
 }
 

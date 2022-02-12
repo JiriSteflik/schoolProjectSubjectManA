@@ -2,7 +2,7 @@
 const topicCreateDtoInType = shape({
   name: uu5String(100).isRequired(),
   description: uu5String(1000),
-  subjectId: uu5String(64),
+  materialList: array(),
 });
 
 const topicGetDtoInType = shape({
@@ -13,7 +13,6 @@ const topicUpdateDtoInType = shape({
   id: id().isRequired(),
   name: uu5String(100),
   description: uu5String(1000),
-  subjectId: uu5String(64),
 });
 
 const topicListDtoInType = shape({

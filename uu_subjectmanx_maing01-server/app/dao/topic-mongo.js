@@ -1,5 +1,6 @@
 "use strict";
 const { UuObjectDao } = require("uu_appg01_server").ObjectStore;
+const {ObjectId} = require("mongodb")
 
 class TopicMongo extends UuObjectDao {
   async createSchema() {
@@ -8,6 +9,9 @@ class TopicMongo extends UuObjectDao {
 
   async create(topic) {
     return await super.insertOne(topic);
+  }
+  async create(subject) {
+    return await super.insertOne(subject);
   }
   async get(awid, id) {
     return await super.findOne({ awid, id });
@@ -22,6 +26,9 @@ class TopicMongo extends UuObjectDao {
   }
   async remove(awid, id) {
     await super.deleteOne({ awid, id });
+  }
+  async listByIdList(awid, idList) {
+    return await super.find({ awid, id: {$in: idList.map((id)=> new ObjectId(id))}});
   }
 }
 

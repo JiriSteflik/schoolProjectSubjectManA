@@ -16,7 +16,6 @@
         "httpMethod": "GET",
         "type": "UVE"
       },
-      
       "subject/create": {
         "realization": "api/controllers/SubjectController.create",
         "httpMethod": "POST",
@@ -89,6 +88,11 @@
       },
       "topic/remove": {
         "realization": "api/controllers/TopicController.remove",
+        "httpMethod": "POST",
+        "type": "CMD"
+      },
+      "material/create": {
+        "realization": "api/controllers/MaterialController.create",
         "httpMethod": "POST",
         "type": "CMD"
       }

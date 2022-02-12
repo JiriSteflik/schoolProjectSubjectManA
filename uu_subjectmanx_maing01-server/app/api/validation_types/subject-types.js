@@ -6,6 +6,7 @@ const subjectCreateDtoInType = shape({
   language: oneOf(["CZ", "EN"]),
   requirement: string(1000),
   description: string(3000),
+  topicList: array(),
 });
 
 const subjectUpdateDtoInType = shape({
@@ -16,6 +17,7 @@ const subjectUpdateDtoInType = shape({
   language: oneOf(["CZ", "EN"]),
   requirement: string(1000),
   description: string(3000),
+  topicList: array(),
 });
 
 const subjectGetDtoInType = shape({

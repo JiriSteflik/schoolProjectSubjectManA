@@ -23,15 +23,16 @@ const WARNINGS = {
   },
 };
 
-const EXECUTIVES_PROFILE = "Executives";
+const EXECUTIVES_PROFILE = "Authorities";
 
 class SubjectAbl {
   constructor() {
     this.validator = Validator.load();
     this.dao = DaoFactory.getDao("subject");
+    this.topicDao = DaoFactory.getDao("topic");
   }
 
-  async list(awid, dtoIn) {
+  async list(awid, dtoIn, getAuthorizationResult) {
     let validationResult = this.validator.validate("subjectListDtoInType", dtoIn);
 
     // hds 1.2, 1.3 // A1, A2
@@ -126,26 +127,37 @@ class SubjectAbl {
       WARNINGS.createUnsupportedKeys.code,
       Errors.Create.InvalidDtoIn
     );
-
+    if (!("topicList" in dtoIn)) dtoIn.topicList = [];
     // hds 2
+    let existingTopicList = (await this.topicDao.listByIdList(awid, dtoIn.topicList)).itemList;
+    existingTopicList = existingTopicList.map((topic) => topic.id.toString());
+
+    if (existingTopicList.length !== dtoIn.topicList.length) {
+      const missingTopicList = [];
+      dtoIn.topicList.forEach((id) => {
+        if (!existingTopicList.find((existingTopicId) => existingTopicId === id)) {
+          missingTopicList.push(id);
+        }
+      });
+
+      //throw new Errors.Create.TopicDoesNotExist({ uuAppErrorMap }, { missingTopicList });
+    }
     dtoIn.awid = awid;
     let dtoOut;
 
     // hds 3
     dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
     dtoIn.uuIdentityName = session.getIdentity().getName();
-    
+
     // hds 4
-    
+
     try {
       dtoOut = await this.dao.create(dtoIn);
     } catch (e) {
       if (e instanceof ObjectStoreError) {
         // A3
         throw new Errors.Create.SubjectDaoCreateFailed({ uuAppErrorMap }, e);
-      }
-      else 
-      throw new Errors.Create.SubjectCustomError({ uuAppErrorMap }, e);
+      } else throw new Errors.Create.SubjectCustomError({ uuAppErrorMap }, e);
     }
 
     // hds 5

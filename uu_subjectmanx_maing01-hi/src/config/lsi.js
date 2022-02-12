@@ -25,8 +25,8 @@ const Lsi = {
       en: "Study programmes",
     },
     studyMaterial: {
-      cs: "Studijní materiály",
-      en: "Study materials",
+      cs: "Topic test",
+      en: "Topic test",
     },
     bookList: {
       cs: "Seznam knih  ",

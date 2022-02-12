@@ -78,7 +78,7 @@ let Calls = {
     return Calls.call("get", commandUri, dtoIn);
   },
   deleteTopic(dtoIn) {
-    let commandUri = Calls.getCommandUri("topic/delete");
+    let commandUri = Calls.getCommandUri("topic/remove");
     return Calls.call("post", commandUri, dtoIn);
   },
   createTopic(dtoIn) {

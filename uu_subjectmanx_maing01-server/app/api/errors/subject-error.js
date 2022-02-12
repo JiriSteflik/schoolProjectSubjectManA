@@ -27,6 +27,13 @@ const Create = {
       this.message = "Some error has occurred.";
     }
   },
+  TopicDoesNotExist: class extends SubjectmanxMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}topicDoesNotExist`;
+      this.message = "Topic does not exist.";
+    }
+  },
 };
 
 const Update = {

@@ -49,7 +49,7 @@ class SubjectmanxMainAbl {
     );
 
     // HDS 2
-    const schemas = ["subjectmanxMain"];
+    const schemas = ["subjectmanxMain","topic","subject","programme","material"];
     let schemaCreateResults = schemas.map(async (schema) => {
       try {
         return await DaoFactory.getDao(schema).createSchema();
