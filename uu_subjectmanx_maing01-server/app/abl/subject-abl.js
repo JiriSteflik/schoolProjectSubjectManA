@@ -1,7 +1,7 @@
 "use strict";
 const Path = require("path");
 const { Validator } = require("uu_appg01_server").Validation;
-const { DaoFactory } = require("uu_appg01_server").ObjectStore;
+const { DaoFactory, ObjectStoreError } = require("uu_appg01_server").ObjectStore;
 const { ValidationHelper } = require("uu_appg01_server").AppServer;
 const Errors = require("../api/errors/subject-error.js");
 
@@ -128,23 +128,24 @@ class SubjectAbl {
     );
 
     // hds 2
-    
-
-    // hds 3
-    //dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
-    //dtoIn.uuIdentityName = session.getIdentity().getName();
-
-    // hds 4
     dtoIn.awid = awid;
     let dtoOut;
+
+    // hds 3
+    dtoIn.uuIdentity = session.getIdentity().getUuIdentity();
+    dtoIn.uuIdentityName = session.getIdentity().getName();
+    
+    // hds 4
+    
     try {
       dtoOut = await this.dao.create(dtoIn);
     } catch (e) {
       if (e instanceof ObjectStoreError) {
         // A3
-        throw new Errors.CreateSubject.SubjectDaoCreateFailed({ uuAppErrorMap }, e);
+        throw new Errors.Create.SubjectDaoCreateFailed({ uuAppErrorMap }, e);
       }
-      throw e;
+      else 
+      throw new Errors.Create.SubjectCustomError({ uuAppErrorMap }, e);
     }
 
     // hds 5

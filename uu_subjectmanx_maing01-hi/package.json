@@ -1,8 +1,8 @@
 {
   "name": "uu_subjectmanx_maing01-hi",
-  "version": "0.1.0",
+  "version": "0.1.0-test6",
   "private": true,
-  "description": "",
+  "description": "SubjectMan",
   "license": "License Commercial",
   "namespace": "UuSubjectmanx",
   "spec": "uu5-app; uu_appg01_devkit@4.6.0",

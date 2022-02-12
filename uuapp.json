@@ -9,7 +9,9 @@
   "devkit": {
     "development": {
       "appBoxLocationUri": "ues:UCL-BT:OPR.RSP/APPBOXES",
-      "appDeploymentUri": "ues:UCL-BT:UUN_STUDENTS03_AWE:UUN.BPMI21WPT05.MAING01"
+      "appDeploymentUri": "ues:UCL-BT[118500965363973101]:UUN_STUDENTS03_AWE[61797a92a1342b81b8058028]:UUN.BPMI21WPT05.MAING01[6206f6b0a1342b1193058a08]",
+      "uuCloudBaseUri": "https://sys-eu-c-3.plus4u.net",
+      "uuCloudLogStoreBaseUri": "https://cmd-eu-c-3.plus4u.net"
     }
   },
   "uu_subjectmanx_maing01-hi": {
@@ -237,6 +239,51 @@
         "imageUri": "",
         "uuEccReady": false,
         "template": "<UuSubjectmanx.Routes.TopicDetail />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.ThemeContext",
+        "name": "ThemeContext",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "ThemeContext"
+        ],
+        "docCode": "UuSubjectmanxBricksThemeContext",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.ThemeContext />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.ThemeProvider",
+        "name": "ThemeProvider",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "ThemeProvider"
+        ],
+        "docCode": "UuSubjectmanxBricksThemeProvider",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.ThemeProvider />"
+      },
+      {
+        "code": "UuSubjectmanx.Bricks.UseTheme",
+        "name": "UseTheme",
+        "tagList": [
+          "UuSubjectmanx",
+          "Bricks",
+          "UseTheme"
+        ],
+        "docCode": "UuSubjectmanxBricksUseTheme",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UuSubjectmanx.Bricks.UseTheme />"
       }
     ]
   },

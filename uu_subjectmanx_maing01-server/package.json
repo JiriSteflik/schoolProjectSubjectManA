@@ -1,7 +1,7 @@
 {
   "name": "uu_subjectmanx_maing01-server",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.0-test6",
+  "description": "SubjectMan",
   "license": "License Commercial",
   "spec": "nodejs-app; uu_appg01_devkit@4.6.0",
   "dependencies": {

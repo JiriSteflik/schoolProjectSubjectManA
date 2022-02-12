@@ -17,7 +17,7 @@
           "min": 1,
           "max": 1
         },
-        "appPackUri": "ues:UCL-BT:UUN.BPMI21WPT05.MAING01/APPBOX-0.1.0-test5:UUN.BPMI21WPT05.MAING01/CMD-PACK",
+        "appPackUri": "ues:UCL-BT:UUN.BPMI21WPT05.MAING01/APPBOX-0.1.0-test6:UUN.BPMI21WPT05.MAING01/CMD-PACK",
         "runtimeStack": "UU.APPG01/APPSERVER_NODEJS_STACK-1.6"
       }
     },
@@ -29,18 +29,16 @@
         "alias": "primary"
       }
     },
-    "uuAppBinaryStoreMap": {
-      "BSID_1": {
-        "size": 0.25,
-        "alias": "binary"
-      }
-    },
+    
     "uuConfigMap": {
       "asid_license_owner_list": [
-        "579-303-3149-1",
-        "8896-9817-1",
+        "579-303-3149-1", 
+        "8896-9817-1", 
         "6152-9726-1"
-      ]
+      ],
+      "uu_app_oidc_providers_oidcg02_client_executive": "579-303-3149-1",
+      "uu_app_oidc_primary_provider": "oidcg02",
+      "uu_app_binarystore_uri": "https://uuappg01-eu-c-3.plus4u.net/uu-appbinarystore-maing02/491f66a0306bad36188d1ef117f014a1"
     }
   },
   "uuSubAppInstance": {
@@ -57,6 +55,7 @@
         "osid": "rywxqjys8gh6sqd75xcbeh6kwzrwimmwz"
       }
     },
+    
     "uuAppBinaryStoreMap": {
       "BSID_1": {
         "bsid": "https://uuappg01-eu-c-3.plus4u.net/uu-appbinarystore-maing02/908f21097a6bf9d15dc336dec03ecb6b"

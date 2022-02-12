@@ -17,7 +17,14 @@ const Create = {
     constructor() {
       super(...arguments);
       this.code = `${Create.UC_CODE}subjectDaoCreateFailed`;
-      this.message = "Subject by subject Dao create failed.";
+      this.message = "Create subject by subject Dao create failed.";
+    }
+  },
+  SubjectCustomError: class extends SubjectmanxMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Create.UC_CODE}subjectCustomError`;
+      this.message = "Some error has occurred.";
     }
   },
 };

@@ -17,6 +17,10 @@
         "sysStateList": ["created"],
         "profileList": ["Public", "AwidLicenseOwner"]
       },
+      "sys/uuAppWorkspace/load": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities","Teachers","Students","StudyDepartment"]
+      },
 
       "subject/create": {
         "sysStateList": ["active"],

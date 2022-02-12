@@ -20,6 +20,21 @@ class SubjectmanxMainAbl {
   constructor() {
     this.validator = Validator.load();
   }
+   
+    async load(uri, dtoIn, session, authorizationResult) {
+    const awid = uri.getAwid();
+    let uuAppErrorMap = {};
+
+    let authorizedProfiles = await authorizationResult.getAuthorizedProfiles();
+
+    const workspace = await UuAppWorkspace.get(awid);
+
+    return {
+      ...workspace,
+      authorizedProfiles: authorizedProfiles,
+      uuAppErrorMap: uuAppErrorMap,
+    };
+  }
 
   async init(uri, dtoIn, session) {
     const awid = uri.getAwid();
