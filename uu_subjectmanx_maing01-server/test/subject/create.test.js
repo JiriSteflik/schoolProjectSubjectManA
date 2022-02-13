@@ -20,12 +20,12 @@ describe("Testing subject/create", () => {
     expect.assertions(8);
 
     let dtoIn = {
-      name: "subjectName",
+      name: "name",
       description: "description",
       requirement: "requirement",
       credit: 2,
       language: "CZ",
-      teacher:"Pepa Tronek",
+      teacher:"Jakub Jakubisko",
     };
     let result = await TestHelper.executePostCommand("subject/create", dtoIn);
 
@@ -39,17 +39,16 @@ describe("Testing subject/create", () => {
     expect(result.teacher).toEqual(dtoIn.teacher);
   });
   test("subject/create - Warning 1.2.1", async () => {
-    expect.assertions(7);
+    expect.assertions(8);
 
     let dtoIn = {
-      name: "subjectName",
+      name: "name",
       description: "description",
       requirement: "requirement",
       credit: 2,
       language: "CZ",
-
       teacher: "Pepa Tronek",
-      unsupportedKey: "Ve středu bude pršet",
+      unsupportedKey: "Tady bude neco jineho",
     };
     let result = await TestHelper.executePostCommand("subject/create", dtoIn);
 
@@ -60,7 +59,17 @@ describe("Testing subject/create", () => {
     expect(result.credit).toEqual(dtoIn.credit);
     expect(result.language).toEqual(dtoIn.language);
     expect(result.teacher).toEqual(dtoIn.teacher);
-
+expect(result.uuAppErrorMap).toEqual(
+  expect.objectContaining({
+    "uu-subject-man/subject/create/unsupportedKeys": expect.objectContaining({
+      type: expect.stringContaining("warning"),
+      message: expect.stringContaining("DtoIn contains unsupported keys."),
+      paramMap: expect.objectContaining({
+        unsupportedKeyList: expect.arrayContaining(["$.unsupportedKey"]),
+      }),
+    }),
+  })
+);
    
   });
   test("subject/create - Error 1.3.1", async () => {

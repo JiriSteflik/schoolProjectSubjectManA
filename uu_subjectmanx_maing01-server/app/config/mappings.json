@@ -95,6 +95,16 @@
         "realization": "api/controllers/MaterialController.create",
         "httpMethod": "POST",
         "type": "CMD"
+      },
+      "subject/load": {
+        "realization": "api/controllers/SubjectController.load",
+        "httpMethod": "GET",
+        "type": "CMD"
+      },
+      "material/remove": {
+        "realization": "api/controllers/MaterialController.remove",
+        "httpMethod": "POST",
+        "type": "CMD"
       }
     }
   }

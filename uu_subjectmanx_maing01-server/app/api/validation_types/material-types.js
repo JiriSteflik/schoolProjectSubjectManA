@@ -4,3 +4,6 @@ const materialCreateDtoInType = shape({
   link: uu5String(255),
   type: oneOf(["video", "youtube", "uuBook", "uuCourse", "link"]),
 });
+const materialRemoveDtoInType = shape({
+  id: id(),
+});

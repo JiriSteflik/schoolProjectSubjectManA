@@ -10,7 +10,7 @@
         "sysStateList": ["created"],
         "profileList": ["AwidLicenseOwner"]
       },
-      "defaultUve": {
+     "defaultUve": {
         "profileList": ["Public"]
       },
       "sys/uuAppWorkspace/initUve": {
@@ -19,71 +19,79 @@
       },
       "sys/uuAppWorkspace/load": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Teachers","Students","StudyDepartment"]
+        "profileList": ["Authorities","Teachers","Students"]
       },
-      "subject/create": {
+     "subject/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives","StudyDepartment","Public"]
+        "profileList": ["Authorities","Executives"]
       },
       "programme/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives","StudyDepartment","Public"]
+        "profileList": ["Authorities","Executives"]
       },
       "subject/update": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives","StudyDepartment","Public"]
+        "profileList": ["Authorities","Executives","teachers"]
       },
       "subject/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Readers","StudyDepartment","Executives","Public","teachers","Students","Public"]
+        "profileList": ["Authorities","Readers","Executives","Public","teachers","Students","Public"]
       },
       "subject/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives","Public"]
+        "profileList": ["Authorities","Executives"]
       },
       "subject/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Readers","StudyDepartment","Executives","Public","teachers","Students","Public"]
+        "profileList": ["Authorities","Readers","Executives","Public","teachers","Students","Public"]
       },
       "programme/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Readers","StudyDepartment","Executives","Public","teachers","Students","Public"]
+        "profileList": ["Authorities","Readers","Executives","Public","teachers","Students","Public"]
       },
       "programme/update": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives","StudyDepartment","Public"]
+        "profileList": ["Authorities","Executives"]
       },
       "programme/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Readers","StudyDepartment","Executives","Public","teachers","Students","Public"]
+        "profileList": ["Authorities","Readers","Executives","Public","teachers","Students","Public"]
       },
       "programme/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives","Public"]
+        "profileList": ["Authorities","Executives"]
       },
       "topic/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives","StudyDepartment","Public"]
+        "profileList": ["Authorities","Executives","teachers"]
       },
       "topic/get": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Readers","StudyDepartment","Executives","teachers","Students","Public"]
+        "profileList": ["Authorities","Readers","Executives","teachers","Students","Public"]
       },
       "topic/update": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives","StudyDepartment","Public"]
+        "profileList": ["Authorities","Executives","teachers"]
       },
       "topic/list": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Readers","StudyDepartment","Executives","Public","teachers","Students","Public"]
+        "profileList": ["Authorities","Readers","Executives","Public","teachers","Students"]
       },
       "topic/remove": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Executives","Public"]
+        "profileList": ["Authorities","Executives"]
       },
       "material/create": {
         "sysStateList": ["active"],
-        "profileList": ["Authorities","Public"]
+        "profileList": ["Authorities","teachers"]
+      },
+      "subject/load": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities","Public","Students","teachers"]
+      },
+      "material/remove": {
+        "sysStateList": ["active"],
+        "profileList": ["Authorities"]
       }
     }
   }

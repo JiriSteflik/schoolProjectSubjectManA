@@ -142,8 +142,15 @@ export const SubjectList = withDataList(
           },
         },
         {
+          key: "teacher",
+          label: { cs: "Ucitel", en: "Teacher" },
+          filterFn: (item, value) => {
+            return item.data.teacher.toLowerCase().includes(value.toLowerCase());
+          },
+        },
+        /*{
           key: "name2",
-          label: { cs: "Autor", en: "Author" },
+          label: { cs: "Učitel", en: "Teacher" },
           filterFn: (item, value) => {
             return item.data.topic.includes(value[0]);
           },
@@ -161,7 +168,7 @@ export const SubjectList = withDataList(
             let topicObject = topicAvailableTags.find((topicOption) => topicOption.value === value[0]);
             return topicObject.content;
           },
-        },
+        },*/
       ];
 
       let Sorters = [

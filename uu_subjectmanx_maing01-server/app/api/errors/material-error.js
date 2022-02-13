@@ -30,6 +30,25 @@ const Create = {
   },
 };
 
+const Remove = {
+  UC_CODE: `${MATERIAL_ERROR_PREFIX}remove/`,
+  InvalidDtoIn: class extends SubjectmanxMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Remove.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
+  SubjectDaoRemoveFailed: class extends SubjectmanxMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Remove.UC_CODE}materialDaoUpdateFailed`;
+      this.message = "Remove material by material Dao update failed.";
+    }
+  },
+};
+
 module.exports = {
+  Remove,
   Create
 };

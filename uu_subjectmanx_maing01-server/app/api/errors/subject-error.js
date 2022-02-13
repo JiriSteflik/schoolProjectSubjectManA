@@ -101,7 +101,27 @@ const List = {
   },
 };
 
+const Load = {
+  UC_CODE: `${SUBJECT_ERROR_PREFIX}load/`,
+  UC_CODE: `${SUBJECT_ERROR_PREFIX}get/`,
+  InvalidDtoIn: class extends SubjectmanxMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Load.UC_CODE}invalidDtoIn`;
+      this.message = "DtoIn is not valid.";
+    }
+  },
+  SubjectDoesNotExist: class extends SubjectmanxMainUseCaseError {
+    constructor() {
+      super(...arguments);
+      this.code = `${Load.UC_CODE}subjectDoesNotExist`;
+      this.message = " Subject does not exist.";
+    }
+  },
+};
+
 module.exports = {
+  Load,
   List,
   Remove,
   Get,

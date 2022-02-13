@@ -61,6 +61,10 @@ let Calls = {
     let commandUri = Calls.getCommandUri("subject/get");
     return Calls.call("get", commandUri, dtoIn);
   },
+  loadSubject(dtoIn) {
+    let commandUri = Calls.getCommandUri("subject/load");
+    return Calls.call("get", commandUri, dtoIn);
+  },
   createSubject(dtoIn) {
     let commandUri = Calls.getCommandUri("subject/create");
     return Calls.call("post", commandUri, dtoIn);

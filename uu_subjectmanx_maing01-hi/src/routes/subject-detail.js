@@ -16,7 +16,9 @@ export const SubjectDetail = createVisualComponent({
   ...STATICS,
 
   //@@viewOn:propTypes
-  propTypes: {},
+  propTypes: {
+  
+  },
   //@@viewOff:propTypes
 
   //@@viewOn:defaultProps
@@ -73,7 +75,7 @@ export const SubjectDetail = createVisualComponent({
                 iconCollapsed="mdi-chevron-down"
                 content={
                   <UU5.Bricks.Block background colorSchema="blue">
-                    {subjectData.data.topicList} 
+                    {subjectData.data.topicList}
                   </UU5.Bricks.Block>
                 }
               />

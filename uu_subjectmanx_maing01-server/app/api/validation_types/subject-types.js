@@ -24,6 +24,9 @@ const subjectGetDtoInType = shape({
   id: id(),
 });
 
+const subjectLoadDtoInType = shape({
+  id: id(),
+});
 const subjectRemoveDtoInType = shape({
   id: id(),
 });

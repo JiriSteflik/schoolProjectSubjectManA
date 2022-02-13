@@ -1,7 +1,7 @@
 "use strict";
 const Path = require("path");
 const { Validator } = require("uu_appg01_server").Validation;
-const { DaoFactory, ObjectStoreError } = require("uu_appg01_server").ObjectStore;
+const { DaoFactory, ObjectStoreError, ObjectStore } = require("uu_appg01_server").ObjectStore;
 const { ValidationHelper } = require("uu_appg01_server").AppServer;
 const Errors = require("../api/errors/subject-error.js");
 
@@ -21,6 +21,9 @@ const WARNINGS = {
   listUnsupportedKeys: {
     code: `${Errors.List.UC_CODE}unsupportedKeys`,
   },
+  loadUnsupportedKeys: {
+    code: `${Errors.Load.UC_CODE}unsupportedKeys`,
+  },
 };
 
 const EXECUTIVES_PROFILE = "Authorities";
@@ -32,7 +35,30 @@ class SubjectAbl {
     this.topicDao = DaoFactory.getDao("topic");
   }
 
+  async load(awid, dtoIn) {
+    // hds 1, 1.1
+    let validationResult = this.validator.validate("subjectLoadDtoInType", dtoIn);
+
+    // hds 1.2, 1.3 // A1, A2
+    let uuAppErrorMap = ValidationHelper.processValidationResult(
+      dtoIn,
+      validationResult,
+      WARNINGS.loadUnsupportedKeys.code,
+      Errors.Load.InvalidDtoIn
+    );
+    let subject = await this.dao.get(awid, dtoIn.id);
+    if (!subject) {
+      throw new Errors.Load.SubjectDoesNotExist({ uuAppErrorMap }, { id: dtoIn.id });
+    }
+
+    subject.topicList = (await this.topicDao.listByIdList(awid, subject.topicList)).itemList;
+    subject.uuAppErrorMap = uuAppErrorMap;
+
+    return subject;
+  }
+
   async list(awid, dtoIn, getAuthorizationResult) {
+    // hds 1, 1.1
     let validationResult = this.validator.validate("subjectListDtoInType", dtoIn);
 
     // hds 1.2, 1.3 // A1, A2
@@ -42,7 +68,7 @@ class SubjectAbl {
       WARNINGS.listUnsupportedKeys.code,
       Errors.List.InvalidDtoIn
     );
-    const listResult = await this.dao.list(awid, dtoIn.pageInfo);
+    const listResult = await this.dao.list(awid, dtoIn.pageInfo, dtoIn.id);
 
     return { ...listResult, uuAppErrorMap };
   }
@@ -57,7 +83,7 @@ class SubjectAbl {
       WARNINGS.removeUnsupportedKeys.code,
       Errors.Remove.InvalidDtoIn
     );
-
+    // hds 2
     try {
       await this.dao.remove(awid, dtoIn.id);
     } catch (e) {
@@ -66,11 +92,12 @@ class SubjectAbl {
       }
       throw e;
     }
-
+    // hds 3
     return { uuAppErrorMap };
   }
 
   async get(awid, dtoIn) {
+    // HDS 1
     let validationResult = this.validator.validate("subjectGetDtoInType", dtoIn);
 
     // hds 1.2, 1.3 // A1, A2
@@ -80,12 +107,13 @@ class SubjectAbl {
       WARNINGS.getUnsupportedKeys.code,
       Errors.Get.InvalidDtoIn
     );
+    //hds2
     let subject = await this.dao.get(awid, dtoIn.id);
     if (!subject) {
       throw new Errors.Get.SubjectDoesNotExist({ uuAppErrorMap }, { id: dtoIn.id });
     }
     subject.uuAppErrorMap = uuAppErrorMap;
-
+    //hds 3
     return subject;
   }
 
@@ -99,8 +127,8 @@ class SubjectAbl {
       WARNINGS.updateUnsupportedKeys.code,
       Errors.Update.InvalidDtoIn
     );
-    // hds 4
 
+    // hds 4
     let dtoOut;
     try {
       dtoOut = await this.dao.update(awid, dtoIn.id, dtoIn);

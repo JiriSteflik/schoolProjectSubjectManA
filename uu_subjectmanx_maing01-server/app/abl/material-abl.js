@@ -9,6 +9,9 @@ const WARNINGS = {
   createUnsupportedKeys: {
     code: `${Errors.Create.UC_CODE}unsupportedKeys`,
   },
+  createUnsupportedKeys: {
+    code: `${Errors.Remove.UC_CODE}unsupportedKeys`,
+  },
 };
 
 class MaterialAbl {
@@ -16,6 +19,31 @@ class MaterialAbl {
     this.validator = Validator.load();
     this.dao = DaoFactory.getDao("material");
   }
+
+  async remove(awid, dtoIn) {
+     let validationResult = this.validator.validate("materialRemoveDtoInType", dtoIn);
+
+    // hds 1.2, 1.3 // A1, A2
+    let uuAppErrorMap = ValidationHelper.processValidationResult(
+      dtoIn,
+      validationResult,
+      WARNINGS.removeUnsupportedKeys.code,
+      Errors.Remove.InvalidDtoIn
+    );
+
+    try {
+      await this.dao.remove(awid, dtoIn.id);
+    } catch (e) {
+      if (e instanceof ObjectStoreError) {
+        throw new Errors.Remove.MaterialDaoRemoveFailed({ uuAppErrorMap }, e);
+      }
+      throw e;
+    }
+
+    return { uuAppErrorMap };
+  }
+
+  
 
   async create(awid, dtoIn) {
     // hds 1, 1.1
